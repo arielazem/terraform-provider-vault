@@ -149,7 +149,7 @@ func signAWSLogin(parameters map[string]interface{}, logger hclog.Logger) error 
 		return fmt.Errorf("failed to generate AWS login data: %s", err)
 	}
 
-	if parameters["header_value"] == "" {
+	if parameters["iam_request_url"] == "" {
 		parameters["iam_request_url"] = loginData["iam_request_url"]
 	}
 
